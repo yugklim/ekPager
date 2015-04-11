@@ -1,6 +1,4 @@
-;
-define('centerSequence', ['underscore'], function (_) {
-  return function (_) {
+;define('centerSequence', ['underscore'], function (_) {
     return function (sequence, size, center) {
       if (_.max(sequence) - center < Math.ceil(size / 2)) {
         return _.last(sequence, size);
@@ -12,6 +10,5 @@ define('centerSequence', ['underscore'], function (_) {
       var part2 = size - part1;
       return sequence.slice(center - part1, center + part2);
     };
-  }(_);
 });
 

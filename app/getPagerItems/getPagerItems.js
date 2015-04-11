@@ -1,6 +1,5 @@
 ;
 define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSequence) {
-  return function (_, centerSequence) {
 
     return function (totalPages, pagesToShow, currentPage) {
       totalPages = Number(totalPages);
@@ -25,5 +24,4 @@ define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSeq
       );
       return pagerItems;
     }
-  }(_, centerSequence);
 });
