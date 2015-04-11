@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
       open: {
         dev: {
-          path: 'http://localhost:63342/AngularPager/app/index.html',
+          path: 'http://localhost:63342/ekPager/app/index.html',
           app: 'Chrome'
         }
       },

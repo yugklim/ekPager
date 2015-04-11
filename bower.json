@@ -5,7 +5,7 @@
     "js/ekPager.js",
     "html/ekPager_template.html"
   ],
-  "homepage": "https://github.com/yugklim/AngularPager-master",
+  "homepage": "https://github.com/yugklim/ekPager",
   "description": "Pager directive for Angular.js applications",
   "keywords": [
     "angular.js",
