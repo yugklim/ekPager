@@ -1,0 +1,38 @@
+{
+  "name": "ekPager",
+  "version": "0.0.0",
+  "main": [
+    "js/ekPager.js",
+    "html/ekPager_template.html"
+  ],
+  "homepage": "https://github.com/yugklim/AngularPager-master",
+  "description": "Pager directive for Angular.js applications",
+  "keywords": [
+    "angular.js",
+    "pager",
+    "paging",
+    "ng",
+    "directive"
+  ],
+  "authors": [
+    "Eugene Klymenko"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "app",
+    "*.*",
+    "!js/*.*",
+    "!html/*.*"
+  ],
+  "dependencies": {
+    "angular": "~1.3.0",
+    "bootstrap": "~3.2.0",
+    "domReady": "~2.0.1",
+    "requirejs": "~2.1.17",
+    "underscore": "~1.8.2"
+  },
+  "appPath": "app",
+  "devDependencies": {
+    "angular-mocks": "~1.3.15"
+  }
+}
