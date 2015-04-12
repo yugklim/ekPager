@@ -1,5 +1,4 @@
-;
-define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSequence) {
+;define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSequence) {
 
     return function (totalPages, pagesToShow, currentPage) {
       totalPages = Number(totalPages);

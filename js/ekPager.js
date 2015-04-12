@@ -5,9 +5,7 @@ define(['require', 'angular', 'ekPagerModule'], function (require, ng) {
   }
 );
 
-;
-define('centerSequence', ['underscore'], function (_) {
-  return function (_) {
+;define('centerSequence', ['underscore'], function (_) {
     return function (sequence, size, center) {
       if (_.max(sequence) - center < Math.ceil(size / 2)) {
         return _.last(sequence, size);
@@ -19,12 +17,10 @@ define('centerSequence', ['underscore'], function (_) {
       var part2 = size - part1;
       return sequence.slice(center - part1, center + part2);
     };
-  }(_);
 });
 
 
-;
-define(['angular', 'getPagerItems'], function (angular, getPagerItems) {
+;define(['angular', 'getPagerItems'], function (angular, getPagerItems) {
   return angular.module('ekPagerModule', []).
     directive('ekPager', function () {
       return {
@@ -40,9 +36,7 @@ define(['angular', 'getPagerItems'], function (angular, getPagerItems) {
 
 
 
-;
-define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSequence) {
-  return function (_, centerSequence) {
+;define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSequence) {
 
     return function (totalPages, pagesToShow, currentPage) {
       totalPages = Number(totalPages);
@@ -67,7 +61,6 @@ define('getPagerItems', ['underscore', 'centerSequence'], function (_, centerSeq
       );
       return pagerItems;
     }
-  }(_, centerSequence);
 });
 
 require.config({

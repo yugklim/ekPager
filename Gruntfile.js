@@ -5,7 +5,6 @@
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-open');
-  grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.initConfig({
@@ -39,29 +38,7 @@ module.exports = function (grunt) {
           src: ["app/ekPager/ekPager_template.html"],
           dest: "html/ekPager_template.html"
         }
-      },
-
-      bower_concat: {
-        all: {
-          dest: 'js/ekgrid.js',
-          exclude: [
-            //'jquery',
-            //'modernizr',
-            //'angular'
-          ],
-          include: [
-            //'angular', 'bootstrap', 'domReady', 'requirejs', 'underscore'
-          ],
-          mainFiles: {},
-          //dependencies: {
-          //  'underscore': 'jquery'
-          //},
-          bowerOptions: {
-            relative: false
-          }
-        }
       }
-
     }
   );
 
