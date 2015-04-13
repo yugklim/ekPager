@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.initConfig({
 
@@ -30,18 +31,34 @@ module.exports = function (grunt) {
 
       concat: {
         dist: {
-          //src:['app/centerSequence/centerSequence.js', 'app/ekPager/ekPagerModule.js'],
-          src: ['app/**/*.js', '!app/**/*_test.js'],
+          src: ['app/**/*.js','app/ekPager/ekPagerModule.js',
+            '!app/**/*_test.js','!app/bootstrap.js', '!app/main.js'],
           dest: "js/ekPager.js"
         },
         template: {
           src: ["app/ekPager/ekPager_template.html"],
           dest: "html/ekPager_template.html"
         }
-      }
+      },
+
+      'string-replace': {
+          dist: {
+            files: {
+              "js/ekPager.js":"js/ekPager.js"
+            },
+
+            options: {
+              replacements: [{
+                pattern: 'ekPager/ekPager_template.html',
+                replacement: 'bower_components/ekPager/html/ekPager_template.html'
+              }]
+            }
+          }
+        }
+
     }
   );
 
   grunt.registerTask("default", ['open', 'watch']);
-  grunt.registerTask("build", ['concat']);
+  grunt.registerTask("build", ['concat', 'string-replace']);
 };

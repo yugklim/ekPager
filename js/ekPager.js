@@ -1,10 +1,3 @@
-define(['require', 'angular', 'ekPagerModule'], function (require, ng) {
-    require(['domReady!'], function (document) {
-      ng.bootstrap(document, ['ekPagerModule']);
-    });
-  }
-);
-
 ;define('centerSequence', ['underscore'], function (_) {
     return function (sequence, size, center) {
       if (_.max(sequence) - center < Math.ceil(size / 2)) {
@@ -20,14 +13,14 @@ define(['require', 'angular', 'ekPagerModule'], function (require, ng) {
 });
 
 
-;define(['angular', 'getPagerItems'], function (angular, getPagerItems) {
+;define('ekPagerModule', ['angular', 'getPagerItems'], function (angular, getPagerItems) {
   return angular.module('ekPagerModule', []).
     directive('ekPager', function () {
       return {
         link: function (scope, element, attrs) {
           scope.pagerItems = getPagerItems(attrs['totalpages'], attrs['pagestoshow'], attrs['currentpage']);
         },
-        templateUrl: 'ekPager/ekPager_template.html'
+        templateUrl: 'bower_components/ekPager/html/ekPager_template.html'
       }
     });
 });
@@ -61,25 +54,4 @@ define(['require', 'angular', 'ekPagerModule'], function (require, ng) {
       );
       return pagerItems;
     }
-});
-
-require.config({
-
-  paths: {
-    'domReady': '../bower_components/domReady/domReady',
-    'angular': '../bower_components/angular/angular',
-    'ekPagerModule': 'ekPager/ekPagerModule',
-    'getPagerItems': 'getPagerItems/getPagerItems',
-    'underscore': '../bower_components/underscore/underscore',
-    'centerSequence': 'centerSequence/centerSequence'
-  },
-
-  shim: {
-    'angular': {
-      exports: 'angular'
-    }
-  },
-
-  // запустить приложение
-  deps: ['bootstrap']
 });

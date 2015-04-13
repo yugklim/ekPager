@@ -1,7 +1,9 @@
 {
   "name": "ekPager",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-string-replace": "^1.0.0"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",

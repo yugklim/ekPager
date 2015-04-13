@@ -1,4 +1,4 @@
-;define(['angular', 'getPagerItems'], function (angular, getPagerItems) {
+;define('ekPagerModule', ['angular', 'getPagerItems'], function (angular, getPagerItems) {
   return angular.module('ekPagerModule', []).
     directive('ekPager', function () {
       return {
